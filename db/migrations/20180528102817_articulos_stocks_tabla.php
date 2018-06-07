@@ -29,7 +29,7 @@ class ArticulosStocksTabla extends AbstractMigration {
      */
     public function up() {
         $artsStocks = $this->table('articulosStocks');
-        $artsStocks->addColumn('idArticulos', 'integer', ['limit' => 11])
+        $artsStocks->addColumn('idArticulo', 'integer', ['limit' => 11])
                 ->addColumn('idTienda', 'integer', ['limit' => 11])
                 ->addColumn('stockMin', 'decimal', ['precision' => 17, 'scale' => 6])
                 ->addColumn('stockMax', 'decimal', ['precision' => 17, 'scale' => 6])
