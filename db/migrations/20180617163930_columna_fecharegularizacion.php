@@ -30,6 +30,7 @@ class ColumnaFecharegularizacion extends AbstractMigration {
     public function change() {
         $users = $this->table('articulosStocks');
         $users->addColumn('fechaRegularizacion', 'datetime', ['null' => true])
+                ->addColumn('usuarioRegularizacion', 'integer', ['limit' => 11,'null' => true])
                 ->update();
     }
 
