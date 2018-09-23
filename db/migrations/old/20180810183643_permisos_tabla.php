@@ -42,7 +42,6 @@ class PermisosTabla extends AbstractMigration {
      */
 
     public function down() {
-
         $this->dropTable('permisos');
     }
 
