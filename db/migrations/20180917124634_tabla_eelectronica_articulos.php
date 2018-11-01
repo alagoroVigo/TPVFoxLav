@@ -28,9 +28,9 @@ class TablaEelectronicaArticulos extends AbstractMigration
     public function up(){
         $articulos = $this->table('modulo_eelectronica_articulos');
         $articulos->addColumn('Art', 'string', ['limit' => 50])
-              ->addColumn('Cat', 'string', ['limit' => 50])
+              ->addColumn('Cat', 'string', ['null'=>true,'limit' => 50])
               ->addColumn('Nom', 'string', ['limit' => 400])
-              ->addColumn('detalle', 'string', ['limit' => 400])
+              ->addColumn('detalle', 'string', ['null'=>true, 'limit' => 400])
               ->addColumn('Stock', 'decimal', ['null' => true, 'precision'=>10,'scale'=>3]) 
               ->addColumn('pvp', 'decimal', ['null' => true, 'precision'=>10,'scale'=>2]) 
               ->addColumn('iva', 'integer', ['null' => true]) 
@@ -38,6 +38,7 @@ class TablaEelectronicaArticulos extends AbstractMigration
               ->addColumn('notas', 'string', ['null' => true, 'limit'=>255]) 
               ->addColumn('Fstock0', 'datetime', ['null'=> true, 'default' => 'CURRENT_TIMESTAMP'])
               ->addColumn('NoFstock0', 'boolean', ['default' => false])
+              ->addColumn('idFamilia', 'integer', ['null' => false, 'default'=>0,'limit'=>11]) 
               ->addTimestamps('creado_en', 'actualizado_en')
               ->addIndex(['Art'], ['unique' => true])
               ->create();

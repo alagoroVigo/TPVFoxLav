@@ -27,7 +27,7 @@ class TablaEelectronicaCategorias extends AbstractMigration {
     public function up() {
         $articulos = $this->table('modulo_eelectronica_categorias');
         $articulos->addColumn('Cat', 'string', ['limit' => 50])
-                ->addColumn('Des', 'string', ['limit' => 400])
+                ->addColumn('Des', 'string', ['null'=>true,'limit' => 400])
                 ->addTimestamps('creado_en', 'actualizado_en')
                 ->addIndex(['Cat'], ['unique' => true])
                 ->create();
